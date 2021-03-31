@@ -1,0 +1,73 @@
+/* CSS Reset to clear out all brower styles, including all margin and padding. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Used to prevent padding from adding to the general width of the element. */
+}
+
+/* Main styling of the core elements of the page. */
+
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7em; /* Used to add vertical spacing between lines. */
+}
+
+a {
+  color: #333; /* Used to set the color of the links */
+  text-decoration: none; /* Used to remove all underline. */
+}
+
+h1, h2, h3 {
+  padding-bottom: 20px;
+}
+
+p {
+  margin: 10px 0; /* Adds 10px of margin to the top & bottom of all paragraph elements. */
+}
+
+/* UTILITY CLASSES & STYLING */
+.container { /* This is used to stretch the background color even if the screen is made larger, but the things on the left and right side stays consistent once it reaches a max width of 1100px. Overflow: auto is used to make sure that the background always shows. Padding is used on the left and right that way the h1 and links are not pushed all the way to the edge of the screen. The div of the container class must be within the navbar id to stretch the screen while still having the background color extend. It also allows us to set the max width and the padding. */
+  margin: auto; /* Used to push everything to the center of the container. */
+  max-width: 1100px;
+  overflow: auto;
+  padding: 0 20px;
+}
+
+
+/* NAVBAR STYLING */
+
+#navbar {
+  background-color: #333;
+  color: #fff; /*This will not be effective because of overflow: auto overriding it. */
+  overflow: auto; /* Used to make the background show no matter what. */
+}
+
+#navbar a {
+  color: #fff;
+}
+
+#navbar h1 {
+  float: left; /* Floats the h1 element within the navbar id over to the left. */
+  padding-top: 20px;
+}
+
+#navbar ul {
+  float: right; /* Floats the unordered list within the navbar id over to the right. */
+  list-style: none; /* Used to remove bullets from all list items. */
+}
+
+#navbar ul li {
+  float: left; /* Used after the unordered list is floated to the right, but is listed vertically, to now arrange the list items within the unordered list horizontally. */
+}
+
+#navbar ul li a {
+  display: block; /* Used to display the links, which are by default inline elements, as block elements so that they can be styled further by adding padding to each side underneath. */
+  padding: 20px;
+  text-align: center; /* Aligns all text to the center of the container. */
+}
+
+#navbar ul li a:hover,
+#navbar ul li a.current {
+  background-color: #444;
+  color: #f7c08a;
+}
